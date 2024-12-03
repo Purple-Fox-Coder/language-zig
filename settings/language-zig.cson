@@ -15,7 +15,7 @@
       '
     'tabLength': 4
     'softTabs': true
-    'preferredLineLength': 100
+
   'bracket-matcher':
     'autocompleteCharacters': [
       '()'
@@ -25,3 +25,7 @@
       '""'
       '``'
     ]
+
+'.source.zig':
+  'editor':
+    'foldEndPattern': '^\\s*((\\)|\\]|\\})|// (\\)|\\]|\\})(\\)|\\]|\\})(\\)|\\]|\\})$)'
