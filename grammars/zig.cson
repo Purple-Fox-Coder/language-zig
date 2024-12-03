@@ -7,10 +7,102 @@
   'zig'
 ]
 'patterns': [
+  # comments
+  {
+    'match': '///.*$'
+    'name': 'comment.block.doc'
+  },
+  {
+    'match': '//!.*$'
+    'name': 'keyword.doc'
+  },
   {
     'match': '//.*$'
-    'name': 'comment'
-  }
+    'name': 'comment.block.line'
+  },
+  # strings
+  {
+    'match': '\\".*?\\"'
+    'name': 'string'
+  },
+  {
+    'match': '\\\\\\\\.*$'
+    'name': 'string.multiline'
+  },
+  # keywords
+  {
+    'match': 'try'
+    'name': 'keyword.control.try'
+  },
+  {
+    'match': 'suspend'
+    'name': 'keyword.control.suspend'
+  },
+  {
+    'match': 'resume'
+    'name': 'keyword.control.resume'
+  },
+  {
+    'match': 'await'
+    'name': 'keyword.control.await'
+  },
+  {
+    'match': 'switch'
+    'name': 'keyword.control.switch'
+  },
+  {
+    'match': 'defer'
+    'name': 'keyword.control.defer'
+  },
+  {
+    'match': 'errdefer'
+    'name': 'keyword.control.errdefer'
+  },
+  {
+    'match': 'if'
+    'name': 'keyword.control.if'
+  },
+  {
+    'match': 'else'
+    'name': 'keyword.control.else'
+  },
+  {
+    'match': 'while'
+    'name': 'keyword.control.while'
+  },
+  {
+    'match': 'for'
+    'name': 'keyword.control.for'
+  },
+  {
+    'match': 'return'
+    'name': 'keyword.control.return'
+  },
+  {
+    'match': 'continue'
+    'name': 'keyword.control.continue'
+  },
+  {
+    'match': 'break'
+    'name': 'keyword.control.break'
+  },
+  {
+    'match': 'const'
+    'name': 'keyword.control.const'
+  },
+  {
+    'match': 'var'
+    'name': 'keyword.control.var'
+  },
+  # functions
+  {
+    'match': 'fn'
+    'name': 'entity.name.function.def'
+  },
+  {
+    'match': 'pub'
+    'name': 'entity.name.function.def'
+  },
 ]
 
 'comments':
