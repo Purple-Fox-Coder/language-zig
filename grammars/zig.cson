@@ -275,7 +275,7 @@
     'name': 'entity.name.function.def.zig'
   },
   {
-    'match': '(^|\\s).+(?=\\()'
+    'match': '(^|\\s)(?<!@)\\w+(?=\\()'
     'name': 'entity.name.function.call.zig'
   },
 ]
