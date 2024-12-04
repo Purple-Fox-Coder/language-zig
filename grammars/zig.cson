@@ -37,19 +37,19 @@
   # keywords
   {
     'match': '(^|(?<=\\s))(try|suspend|resume|await|switch)((?=\\s)|$)'
-    'name': 'keyword.control.try.zig'
+    'name': 'keyword.control.zig'
   },
   {
     'match': '(^|(?<=\\s))(defer|errdefer)((?=\\s)|$)'
-    'name': 'keyword.control.defer.zig'
+    'name': 'keyword.control.zig'
   },
   {
     'match': '(^|(?<=\\s))(if|else|while|for|return|noreturn)((?=\\s)|$)'
-    'name': 'keyword.control.if.zig'
+    'name': 'keyword.control.zig'
   },
   {
     'match': '(^|(?<=\\s))(continue|break|const|var|unreachable)((?=\\s)|$)'
-    'name': 'keyword.control.continue.zig'
+    'name': 'keyword.control.zig'
   },
   # values
   {
