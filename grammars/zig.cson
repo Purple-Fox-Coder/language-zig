@@ -36,229 +36,229 @@
   },
   # keywords
   {
-    'match': 'try'
+    'match': '(^|\\s)try((?=\\s)|$)'
     'name': 'keyword.control.try.zig'
   },
   {
-    'match': 'suspend'
+    'match': '(^|\\s)suspend((?=\\s)|$)'
     'name': 'keyword.control.suspend.zig'
   },
   {
-    'match': 'resume'
+    'match': '(^|\\s)resume((?=\\s)|$)'
     'name': 'keyword.control.resume.zig'
   },
   {
-    'match': 'await'
+    'match': '(^|\\s)await((?=\\s)|$)'
     'name': 'keyword.control.await.zig'
   },
   {
-    'match': 'switch'
+    'match': '(^|\\s)switch((?=\\s)|$)'
     'name': 'keyword.control.switch.zig'
   },
   {
-    'match': 'defer'
+    'match': '(^|\\s)defer((?=\\s)|$)'
     'name': 'keyword.control.defer.zig'
   },
   {
-    'match': 'errdefer'
+    'match': '(^|\\s)errdefer((?=\\s)|$)'
     'name': 'keyword.control.errdefer.zig'
   },
   {
-    'match': 'if'
+    'match': '(^|\\s)if((?=\\s)|$)'
     'name': 'keyword.control.if.zig'
   },
   {
-    'match': 'else'
+    'match': '(^|\\s)else((?=\\s)|$)'
     'name': 'keyword.control.else.zig'
   },
   {
-    'match': 'while'
+    'match': '(^|\\s)while((?=\\s)|$)'
     'name': 'keyword.control.while.zig'
   },
   {
-    'match': 'for'
+    'match': '(^|\\s)for((?=\\s)|$)'
     'name': 'keyword.control.for.zig'
   },
   {
-    'match': 'return'
+    'match': '(^|\\s)return((?=\\s)|$)'
     'name': 'keyword.control.return.zig'
   },
   {
-    'match': 'noreturn'
+    'match': '(^|\\s)noreturn((?=\\s)|$)'
     'name': 'keyword.control.return.zig'
   },
   {
-    'match': 'continue'
+    'match': '(^|\\s)continue((?=\\s)|$)'
     'name': 'keyword.control.continue.zig'
   },
   {
-    'match': 'break'
+    'match': '(^|\\s)break((?=\\s)|$)'
     'name': 'keyword.control.break.zig'
   },
   {
-    'match': 'const'
+    'match': '(^|\\s)const((?=\\s)|$)'
     'name': 'keyword.control.const.zig'
   },
   {
-    'match': 'var'
+    'match': '(^|\\s)var((?=\\s)|$)'
     'name': 'keyword.control.var.zig'
   },
   {
-    'match': 'unreachable'
+    'match': '(^|\\s)unreachable((?=\\s)|$)'
     'name': 'keyword.control.unreachable.zig'
   },
   # values
   {
-    'match': 'i8'
+    'match': '(^|\\s)i8((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'u8'
+    'match': '(^|\\s)u8((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'i16'
+    'match': '(^|\\s)i16((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'u16'
+    'match': '(^|\\s)u16((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'i32'
+    'match': '(^|\\s)i32((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'u32'
+    'match': '(^|\\s)u32((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'i64'
+    'match': '(^|\\s)i64((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'u64'
+    'match': '(^|\\s)u64((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'i128'
+    'match': '(^|\\s)i128((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'u128'
+    'match': '(^|\\s)u128((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'isize'
+    'match': '(^|\\s)isize((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'usize'
+    'match': '(^|\\s)usize((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'c_char'
+    'match': '(^|\\s)c_char((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'c_short'
+    'match': '(^|\\s)c_short((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'c_ushort'
+    'match': '(^|\\s)c_ushort((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'cint'
+    'match': '(^|\\s)cint((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'cuint'
+    'match': '(^|\\s)cuint((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'c_long'
+    'match': '(^|\\s)c_long((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'c_ulong'
+    'match': '(^|\\s)c_ulong((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'c_longlong'
+    'match': '(^|\\s)c_longlong((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'c_ulonglong'
+    'match': '(^|\\s)c_ulonglong((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'c_longdouble'
+    'match': '(^|\\s)c_longdouble((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'f16'
+    'match': '(^|\\s)f16((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'f32'
+    'match': '(^|\\s)f32((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'f64'
+    'match': '(^|\\s)f64((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'f80'
+    'match': '(^|\\s)f80((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'f128'
+    'match': '(^|\\s)f128((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'bool'
+    'match': '(^|\\s)bool((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'anyopaque'
+    'match': '(^|\\s)anyopaque((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'void'
+    'match': '(^|\\s)void((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'type'
+    'match': '(^|\\s)type((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'anyerror'
+    'match': '(^|\\s)anyerror((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'comptime_int'
+    'match': '(^|\\s)comptime_int((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': 'comptime_float'
+    'match': '(^|\\s)comptime_float((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   # literals
   {
-    'match': 'true'
+    'match': '(^|\\s)true((?=\\s)|$)'
     'name': 'constant.literal.zig'
   },
   {
-    'match': 'false'
+    'match': '(^|\\s)false((?=\\s)|$)'
     'name': 'constant.literal.zig'
   },
   {
-    'match': 'null'
+    'match': '(^|\\s)null((?=\\s)|$)'
     'name': 'constant.literal.zig'
   },
   {
-    'match': 'undefined'
+    'match': '(^|\\s)undefined((?=\\s)|$)'
     'name': 'constant.literal.zig'
   },
   {
@@ -267,11 +267,11 @@
   },
   # functions
   {
-    'match': 'fn'
+    'match': '(^|\\s)fn((?=\\s)|$)'
     'name': 'entity.name.function.def.zig'
   },
   {
-    'match': 'pub'
+    'match': '(^|\\s)pub((?=\\s)|$)'
     'name': 'entity.name.function.def.zig'
   },
   # {
