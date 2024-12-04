@@ -103,6 +103,151 @@
     'match': 'var'
     'name': 'keyword.control.var.zig'
   },
+  {
+    'match': 'unreachable'
+    'name': 'keyword.control.unreachable.zig'
+  },
+  {
+    'match': 'undefined'
+    'name': 'keyword.control.undefined.zig'
+  },
+  # values
+  {
+    'match': 'i8'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'u8'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'i16'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'u16'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'i32'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'u32'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'i64'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'u64'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'i128'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'u128'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'isize'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'usize'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'c_char'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'c_short'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'c_ushort'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'cint'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'cuint'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'c_long'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'c_ulong'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'c_longlong'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'c_ulonglong'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'c_longdouble'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'f16'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'f32'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'f64'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'f80'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'f128'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'bool'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'anyopaque'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'void'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'type'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'anyerror'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'comptime_int'
+    'name': 'keyword.type.zig'
+  },
+  {
+    'match': 'comptime_float'
+    'name': 'keyword.type.zig'
+  },
   # functions
   {
     'match': 'fn'
