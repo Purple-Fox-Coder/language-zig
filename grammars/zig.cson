@@ -225,7 +225,7 @@
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|\\s)void((?=\\s)|$)'
+    'match': '(^|\\s)void((?=(\\s|\\{))|$)'
     'name': 'keyword.type.zig'
   },
   {
@@ -274,10 +274,10 @@
     'match': '(^|\\s)pub((?=\\s)|$)'
     'name': 'entity.name.function.def.zig'
   },
-  # {
-  #   'match': '(?:^|[^@]).+(?=\\()'
-  #   'name': 'entity.name.function.call.zig'
-  # },
+  {
+    'match': '(^|\\s).+(?=\\()'
+    'name': 'entity.name.function.call.zig'
+  },
 ]
 
 'comments':
