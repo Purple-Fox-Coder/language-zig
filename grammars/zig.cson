@@ -98,7 +98,7 @@
     'name': 'constant.literal.zig'
   },
   {
-    'match': '(^|(?<=\\s))[0-9]+\\.?[0-9]*((?=\\s)|$)'
+    'match': '(^|(?<=(\\s|\\[)))[0-9]+\\.?[0-9]*((?=(\\s|\\]))|$)'
     'name': 'constant.literal.zig'
   },
   # functions
