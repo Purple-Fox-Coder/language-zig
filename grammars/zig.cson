@@ -10,99 +10,108 @@
   # comments
   {
     'match': '///.*$'
-    'name': 'comment.block.doc'
+    'name': 'comment.block.doc.zig'
   },
   {
     'match': '//!.*$'
-    'name': 'keyword.doc'
+    'name': 'keyword.doc.zig'
   },
   {
     'match': '//.*$'
-    'name': 'comment.block.line'
+    'name': 'comment.block.line.zig'
   },
   # strings
   {
     'match': '\\".*?\\"'
-    'name': 'string'
+    'name': 'string.zig'
   },
   {
     'match': '\\\\\\\\.*$'
-    'name': 'string.multiline'
+    'name': 'string.multiline.zig'
+  },
+  # special
+  {
+    'match': '@.*(?=\\()'
+    'name': 'constant.import.zig'
   },
   # keywords
   {
     'match': 'try'
-    'name': 'keyword.control.try'
+    'name': 'keyword.control.try.zig'
   },
   {
     'match': 'suspend'
-    'name': 'keyword.control.suspend'
+    'name': 'keyword.control.suspend.zig'
   },
   {
     'match': 'resume'
-    'name': 'keyword.control.resume'
+    'name': 'keyword.control.resume.zig'
   },
   {
     'match': 'await'
-    'name': 'keyword.control.await'
+    'name': 'keyword.control.await.zig'
   },
   {
     'match': 'switch'
-    'name': 'keyword.control.switch'
+    'name': 'keyword.control.switch.zig'
   },
   {
     'match': 'defer'
-    'name': 'keyword.control.defer'
+    'name': 'keyword.control.defer.zig'
   },
   {
     'match': 'errdefer'
-    'name': 'keyword.control.errdefer'
+    'name': 'keyword.control.errdefer.zig'
   },
   {
     'match': 'if'
-    'name': 'keyword.control.if'
+    'name': 'keyword.control.if.zig'
   },
   {
     'match': 'else'
-    'name': 'keyword.control.else'
+    'name': 'keyword.control.else.zig'
   },
   {
     'match': 'while'
-    'name': 'keyword.control.while'
+    'name': 'keyword.control.while.zig'
   },
   {
     'match': 'for'
-    'name': 'keyword.control.for'
+    'name': 'keyword.control.for.zig'
   },
   {
     'match': 'return'
-    'name': 'keyword.control.return'
+    'name': 'keyword.control.return.zig'
   },
   {
     'match': 'continue'
-    'name': 'keyword.control.continue'
+    'name': 'keyword.control.continue.zig'
   },
   {
     'match': 'break'
-    'name': 'keyword.control.break'
+    'name': 'keyword.control.break.zig'
   },
   {
     'match': 'const'
-    'name': 'keyword.control.const'
+    'name': 'keyword.control.const.zig'
   },
   {
     'match': 'var'
-    'name': 'keyword.control.var'
+    'name': 'keyword.control.var.zig'
   },
   # functions
   {
     'match': 'fn'
-    'name': 'entity.name.function.def'
+    'name': 'entity.name.function.def.zig'
   },
   {
     'match': 'pub'
-    'name': 'entity.name.function.def'
+    'name': 'entity.name.function.def.zig'
   },
+  # {
+  #   'match': '(?:^|[^@]).+(?=\\()'
+  #   'name': 'entity.name.function.call.zig'
+  # },
 ]
 
 'comments':
