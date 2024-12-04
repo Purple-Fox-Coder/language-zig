@@ -84,6 +84,10 @@
     'name': 'keyword.control.return.zig'
   },
   {
+    'match': 'noreturn'
+    'name': 'keyword.control.return.zig'
+  },
+  {
     'match': 'continue'
     'name': 'keyword.control.continue.zig'
   },
