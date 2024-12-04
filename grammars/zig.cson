@@ -22,8 +22,12 @@
   },
   # strings
   {
-    'match': '\\".*\\"'
+    'match': '\\"[^\\"]*\\"'
     'name': 'string.literal.zig'
+  },
+  {
+    'match': '\'[^\']*\''
+    'name': 'string.character.char.literal.zig'
   },
   {
     'match': '\\\\\\\\.*$'
