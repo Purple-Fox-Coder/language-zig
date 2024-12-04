@@ -17,7 +17,5 @@
       '
     'tabLength': 4
     'softTabs': true
-
-'.source.zig':
-  'editor':
+    
     'foldEndPattern': '(?<!\\*)\\*\\*/|^\\s*\\}'
