@@ -1,6 +1,6 @@
 {
   "name": "language-zig",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Language support for Zig.  A continuation of https://github.com/GrayJack/language-zig",
   "keywords": [
     "language",
