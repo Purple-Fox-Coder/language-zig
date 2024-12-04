@@ -36,74 +36,74 @@
   },
   # keywords
   {
-    'match': '(^|\\s)(try|suspend|resume|await|switch)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(try|suspend|resume|await|switch)((?=\\s)|$)'
     'name': 'keyword.control.try.zig'
   },
   {
-    'match': '(^|\\s)(defer|errdefer)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(defer|errdefer)((?=\\s)|$)'
     'name': 'keyword.control.defer.zig'
   },
   {
-    'match': '(^|\\s)(if|else|while|for|return|noreturn)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(if|else|while|for|return|noreturn)((?=\\s)|$)'
     'name': 'keyword.control.if.zig'
   },
   {
-    'match': '(^|\\s)(continue|break|const|var|unreachable)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(continue|break|const|var|unreachable)((?=\\s)|$)'
     'name': 'keyword.control.continue.zig'
   },
   # values
   {
-    'match': '(^|\\s)(i8|u8|i16|u16|i32|u32|i64|u64|i128|u128)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(i8|u8|i16|u16|i32|u32|i64|u64|i128|u128)((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|\\s)(isize|usize)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(isize|usize)((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|\\s)(c_char|c_short|c_ushort|cint|cuint)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(c_char|c_short|c_ushort|cint|cuint)((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|\\s)(c_long|c_ulong|c_longlong|c_ulonglong)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(c_long|c_ulong|c_longlong|c_ulonglong)((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|\\s)(c_longdouble|f16|f32|f64|f80|f128)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(c_longdouble|f16|f32|f64|f80|f128)((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|\\s)bool((?=\\s)|$)'
+    'match': '(^|(?<=\\s))bool((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|\\s)void((?=(\\s|\\{))|$)'
+    'match': '(^|(?<=\\s))void((?=(\\s|\\{))|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|\\s)(anyopaque|type|anyerror)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(anyopaque|type|anyerror)((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|\\s)(comptime_int|comptime_float)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(comptime_int|comptime_float)((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   # literals
   {
-    'match': '(^|\\s)(true|false|null|undefined)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(true|false|null|undefined)((?=\\s)|$)'
     'name': 'constant.literal.zig'
   },
   {
-    'match': '(^|\\s)[0-9]+((?=\\s)|$)'
+    'match': '(^|(?<=\\s))[0-9]+((?=\\s)|$)'
     'name': 'constant.literal.zig'
   },
   # functions
   {
-    'match': '(^|\\s)(fn|pub)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(fn|pub)((?=\\s)|$)'
     'name': 'entity.name.function.def.zig'
   },
   {
-    'match': '(^|\\s|(?<=\\.))(?<!@)\\w+(?=\\()'
+    'match': '(^|(?<=(\\s|\\.)))(?<!@)\\w+(?=\\()'
     'name': 'entity.name.function.call.zig'
   },
 ]
