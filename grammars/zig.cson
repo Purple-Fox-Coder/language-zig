@@ -103,7 +103,7 @@
     'name': 'entity.name.function.def.zig'
   },
   {
-    'match': '(^|\\s|\\.)(?<!@)\\w+(?=\\()'
+    'match': '(^|\\s|(?<=\\.))(?<!@)\\w+(?=\\()'
     'name': 'entity.name.function.call.zig'
   },
 ]
