@@ -36,7 +36,7 @@
   },
   # keywords
   {
-    'match': '(^|(?<=\\s))(try|suspend|resume|await|switch)((?=\\s)|$)'
+    'match': '(^|(?<=(\\s|\\(|\\{|\\]|;)))(try|suspend|resume|await|switch)((?=(\\s|\\)|\\}|\\[))|$)'
     'name': 'keyword.control.zig'
   },
   {
@@ -53,7 +53,7 @@
   },
   # values
   {
-    'match': '(^|(?<=\\s))(i8|u8|i16|u16|i32|u32|i64|u64|i128|u128)((?=\\s)|$)'
+    'match': '(^|(?<=(\\s|\\])))(i8|u8|i16|u16|i32|u32|i64|u64|i128|u128)((?=(\\s|\\[))|$)'
     'name': 'keyword.type.zig'
   },
   {
@@ -65,11 +65,11 @@
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|(?<=\\s))(c_long|c_ulong|c_longlong|c_ulonglong)((?=\\s)|$)'
+    'match': '(^|(?<=\\s))(c_long|c_ulong|c_longlong|c_ulonglong|c_longdouble)((?=\\s)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|(?<=\\s))(c_longdouble|f16|f32|f64|f80|f128)((?=\\s)|$)'
+    'match': '(^|(?<=(\\s|\\])))(f16|f32|f64|f80|f128)((?=(\\s|\\[))|$)'
     'name': 'keyword.type.zig'
   },
   {
