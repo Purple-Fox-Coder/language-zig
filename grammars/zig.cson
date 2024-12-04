@@ -23,11 +23,11 @@
   # strings
   {
     'match': '\\".*?\\"'
-    'name': 'string.zig'
+    'name': 'string.literal.zig'
   },
   {
     'match': '\\\\\\\\.*$'
-    'name': 'string.multiline.zig'
+    'name': 'string.multiline.block.literal.zig'
   },
   # special
   {
@@ -106,10 +106,6 @@
   {
     'match': 'unreachable'
     'name': 'keyword.control.unreachable.zig'
-  },
-  {
-    'match': 'undefined'
-    'name': 'keyword.control.undefined.zig'
   },
   # values
   {
@@ -247,6 +243,27 @@
   {
     'match': 'comptime_float'
     'name': 'keyword.type.zig'
+  },
+  # literals
+  {
+    'match': 'true'
+    'name': 'constant.literal.zig'
+  },
+  {
+    'match': 'false'
+    'name': 'constant.literal.zig'
+  },
+  {
+    'match': 'null'
+    'name': 'constant.literal.zig'
+  },
+  {
+    'match': 'undefined'
+    'name': 'constant.literal.zig'
+  },
+  {
+    'match': '(^|\\s)[0-9]+((?=\\s)|$)'
+    'name': 'constant.literal.zig'
   },
   # functions
   {
