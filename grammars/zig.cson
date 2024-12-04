@@ -22,7 +22,7 @@
   },
   # strings
   {
-    'match': '\\"\\w*\\"'
+    'match': '\\".*\\"'
     'name': 'string.literal.zig'
   },
   {
