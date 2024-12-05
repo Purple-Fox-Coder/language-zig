@@ -40,70 +40,70 @@
   },
   # keywords
   {
-    'match': '(^|(?<=(\\s|\\(|\\{|\\]|;)))(try|catch|suspend|resume|await|switch)((?=(\\s|\\)|\\}|\\[))|$)'
+    'match': '(^|(?<!\\w))(try|catch|suspend|resume|await|switch)((?!\\w)|$)'
     'name': 'keyword.control.zig'
   },
   {
-    'match': '(^|(?<=\\s))(defer|errdefer)((?=\\s)|$)'
+    'match': '(^|(?<!\\w))(defer|errdefer)((?!\\w)|$)'
     'name': 'keyword.control.zig'
   },
   {
-    'match': '(^|(?<=\\s))(if|else|while|for|return|noreturn)((?=\\s)|$)'
+    'match': '(^|(?<!\\w))(if|else|while|for|return|noreturn)((?!\\w)|$)'
     'name': 'keyword.control.zig'
   },
   {
-    'match': '(^|(?<=\\s))(continue|break|const|var|unreachable)((?=\\s)|$)'
+    'match': '(^|(?<!\\w))(continue|break|const|var|unreachable)((?!\\w)|$)'
     'name': 'keyword.control.zig'
   },
   # values
   {
-    'match': '(^|(?<=(\\s|\\])))(i8|u8|i16|u16|i32|u32|i64|u64|i128|u128)((?=(\\s|\\[))|$)'
+    'match': '(^|(?<!\\w))(i8|u8|i16|u16|i32|u32|i64|u64|i128|u128)((?!\\w)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|(?<=\\s))(isize|usize)((?=\\s)|$)'
+    'match': '(^|(?<!\\w))(isize|usize)((?!\\w)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|(?<=\\s))(c_char|c_short|c_ushort|cint|cuint)((?=\\s)|$)'
+    'match': '(^|(?<!\\w))(c_char|c_short|c_ushort|cint|cuint)((?!\\w)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|(?<=\\s))(c_long|c_ulong|c_longlong|c_ulonglong|c_longdouble)((?=\\s)|$)'
+    'match': '(^|(?<!\\w))(c_long|c_ulong|c_longlong|c_ulonglong|c_longdouble)((?!\\w)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|(?<=(\\s|\\])))(f16|f32|f64|f80|f128)((?=(\\s|\\[))|$)'
+    'match': '(^|(?<!\\w))(f16|f32|f64|f80|f128)((?!\\w)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|(?<=\\s))bool((?=\\s)|$)'
+    'match': '(^|(?<!\\w))bool((?!\\w)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|(?<=\\s))void((?=(\\s|\\{))|$)'
+    'match': '(^|(?<!\\w))void((?!\\w)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|(?<=\\s))(anyopaque|type|anyerror)((?=\\s)|$)'
+    'match': '(^|(?<!\\w))(anyopaque|type|anyerror)((?!\\w)|$)'
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|(?<=\\s))(comptime_int|comptime_float)((?=\\s)|$)'
+    'match': '(^|(?<!\\w))(comptime_int|comptime_float)((?!\\w)|$)'
     'name': 'keyword.type.zig'
   },
   # literals
   {
-    'match': '(^|(?<=\\s))(true|false|null|undefined)((?=\\s)|$)'
+    'match': '(^|(?<!\\w))(true|false|null|undefined)((?!\\w)|$)'
     'name': 'constant.literal.zig'
   },
   {
-    'match': '(^|(?<=(\\s|\\[)))[0-9]+\\.?[0-9]*((?=(\\s|\\]))|$)'
+    'match': '(^|(?<!\\w))[0-9]+\\.?[0-9]*((?!\\w)|$)'
     'name': 'constant.literal.zig'
   },
   # functions
   {
-    'match': '(^|(?<=\\s))(fn|pub)((?=\\s)|$)'
+    'match': '(^|(?<!\\w))(fn|pub)((?!\\w)|$)'
     'name': 'entity.name.function.def.zig'
   },
   {
