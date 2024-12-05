@@ -35,7 +35,7 @@
   },
   # special
   {
-    'match': '@.*(?=\\()'
+    'match': '@\\w*(?=\\()'
     'name': 'constant.import.zig'
   },
   # keywords
