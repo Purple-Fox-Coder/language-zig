@@ -44,7 +44,7 @@
     'name': 'keyword.control.zig'
   },
   {
-    'match': '(^|(?<!\\w))(defer|errdefer)((?!\\w)|$)'
+    'match': '(^|(?<!\\w))(defer|errdefer|error)((?!\\w)|$)'
     'name': 'keyword.control.zig'
   },
   {
@@ -57,7 +57,7 @@
   },
   # values
   {
-    'match': '(^|(?<!\\w))(i8|u8|i16|u16|i32|u32|i64|u64|i128|u128)((?!\\w)|$)'
+    'match': '(^|(?<!\\w))((i|u)[0-6]?[0-9]?[0-9]?[0-9]?[0-9])((?!\\w)|$)'
     'name': 'keyword.type.zig'
   },
   {
