@@ -94,7 +94,7 @@
   },
   # literals
   {
-    'match': '(^|(?<!\\w))(true|false|null|undefined)((?!\\w)|$)'
+    'match': '(^|(?<!\\w))(true|false|null|undefined|struct|enum)((?!\\w)|$)'
     'name': 'constant.literal.zig'
   },
   { # ints/floats
@@ -114,6 +114,15 @@
     'match': '(^|(?<=(\\s|\\.)))(?<!@)\\w+(?=\\()'
     'name': 'entity.name.function.call.zig'
   },
+  # values
+  {
+    'match': '(\\w+)((?=((\\s*\\=)|(\\s*:)))|$)'
+    'name': 'variable.other.readwrite.zig'
+  },
+  {
+    'match': '(?<=(\\|\\s*))(\\w+)((?=(\\s*\\|))|$)'
+    'name': 'variable.other.readwrite.zig'
+  }
 ]
 
 'comments':
