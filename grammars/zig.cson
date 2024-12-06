@@ -122,6 +122,15 @@
   {
     'match': '(?<=(\\|\\s*))(\\w+)((?=(\\s*\\|))|$)'
     'name': 'variable.other.readwrite.zig'
+  },
+  # operators
+  {
+    'match': '&|!'
+    'name': 'keyword.control.operator.zig'
+  },
+  {
+    'match': '\\*(?=\\w)'
+    'name': 'keyword.control.operator.zig'
   }
 ]
 
