@@ -17,5 +17,24 @@
       '
     'tabLength': 4
     'softTabs': true
-    
+
+    'foldEndPattern': '(?<!\\*)\\*\\*/|^\\s*\\}'
+
+'.source.zon':
+  'editor':
+    'commentStart': '// '
+    'commentDelimiters':
+      'line': '//'
+    'increaseIndentPattern': '(?x)
+       ^ .* \\{ [^}"\']* $
+      |^ .* \\( [^\\)"\']* $
+      |^ \\s* \\{ \\} $
+      '
+    'decreaseIndentPattern': '(?x)
+       ^ \\s* (\\s* /[*] .* [*]/ \\s*)* \\}
+      |^ \\s* (\\s* /[*] .* [*]/ \\s*)* \\)
+      '
+    'tabLength': 4
+    'softTabs': true
+
     'foldEndPattern': '(?<!\\*)\\*\\*/|^\\s*\\}'
