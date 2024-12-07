@@ -17,19 +17,6 @@
     'match': '\\"[^\\"]*\\"'
     'name': 'string.literal.zig'
   },
-  # literals
-  {
-    'match': '(^|(?<!\\w))(true|false|null|undefined|struct|enum)((?!\\w)|$)'
-    'name': 'constant.literal.zig'
-  },
-  { # ints/floats
-    'match': '(^|(?<!\\w))[0-9]+\\.?[0-9a-zA-Z]*((?!\\w)|$)'
-    'name': 'constant.literal.zig'
-  },
-  { # hex
-    'match': '(^|(?<!\\w))0x[0-9]+((?!\\w)|$)'
-    'name': 'constant.literal.zig'
-  },
   # values
   {
     'match': '(\\w+)((?=((\\s*\\=)|(\\s*:)))|$)'
