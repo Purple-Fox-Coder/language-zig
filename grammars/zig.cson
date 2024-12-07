@@ -61,7 +61,7 @@
     'name': 'keyword.type.zig'
   },
   {
-    'match': '(^|(?<!\\w))(isize|usize)((?!\\w)|$)'
+    'match': '(^|(?<!\\w))(isize|usize|anytype)((?!\\w)|$)'
     'name': 'keyword.type.zig'
   },
   {
