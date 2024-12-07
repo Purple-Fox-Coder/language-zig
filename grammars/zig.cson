@@ -44,7 +44,7 @@
     'name': 'keyword.control.zig'
   },
   {
-    'match': '(^|(?<!\\w))(defer|errdefer|error|orelse)((?!\\w)|$)'
+    'match': '(^|(?<!\\w))(defer|errdefer|error|orelse|test)((?!\\w)|$)'
     'name': 'keyword.control.zig'
   },
   {
