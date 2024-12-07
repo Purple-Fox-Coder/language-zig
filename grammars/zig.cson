@@ -125,7 +125,7 @@
   },
   # operators
   {
-    'match': '&|!|?'
+    'match': '&|!|\\?'
     'name': 'keyword.control.operator.zig'
   },
   {
