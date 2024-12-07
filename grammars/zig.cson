@@ -125,11 +125,11 @@
   },
   # operators
   {
-    'match': '&|!|\\?'
+    'match': '&|!'
     'name': 'keyword.control.operator.zig'
   },
   {
-    'match': '\\*(?=\\w)'
+    'match': '(\\*|\\?)(?=\\w)'
     'name': 'keyword.control.operator.zig'
   }
 ]
