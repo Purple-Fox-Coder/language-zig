@@ -5,6 +5,8 @@ Syntax highlighting for the Zig programming language.  (also supports .zon).
 A continuation of [language-zig-treesitter](https://github.com/GrayJack/language-zig),
 updated for Pulsar and the most recent version of Zig.
 
+![Screenshot](https://github.com/Purple-Fox-Coder/language-zig/blob/master/screenshot.png)
+
 ## Usage
 
 Simply open any ``.zig`` or ``.zon`` file in pulsar after installing the package
