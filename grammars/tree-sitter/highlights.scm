@@ -247,21 +247,21 @@
 ] @operator
 
 ; Literals
-(character) @character
+(character) @character.literal.constant.zig
 
 ([
   (string)
   (multiline_string)
-] @string
+] @string.literal.constant.zig
   (#set! "priority" 95))
 
-(integer) @number
+(integer) @number.literal.constant.zig
 
-(float) @number.float
+(float) @number.float.literal.constant.zig
 
-(boolean) @boolean
+(boolean) @boolean.literal.constant.zig
 
-(escape_sequence) @string.escape
+(escape_sequence) @constant.character.escape.zig
 
 ; Punctuation
 [
