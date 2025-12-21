@@ -95,6 +95,13 @@
     (builtin_identifier) @keyword.import
     (#any-of? @keyword.import "@import" "@cImport")))
 
+(variable_declaration
+  (identifier) @module
+  (field_expression
+    object: (builtin_function
+        (builtin_identifier) @keyword.import
+        (#any-of? @keyword.import "@import" "@cImport"))))
+
 ; Builtins
 [
   "c"
