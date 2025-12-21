@@ -8,7 +8,10 @@ fileTypes: [ 'zig', 'zon' ]
 # firstLineRegex: "^\s*(---|<(?!html|head|body)\w+)"
 treeSitter:
     grammar: 'tree-sitter/grammar.wasm'
-    highlightsQuery: 'tree-sitter/highlights.scm'
+    highlightsQuery: [
+      'tree-sitter/highlights.scm'
+      'tree-sitter/locals.scm'
+    ]
     foldsQuery: 'tree-sitter/folds.scm'
     indentsQuery: 'tree-sitter/indents.scm'
 comments:
