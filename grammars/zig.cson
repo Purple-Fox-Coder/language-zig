@@ -1,139 +1,16 @@
-# If this is your first time writing a language grammar, check out:
-#   - https://flight-manual.atom.io/hacking-atom/sections/creating-a-grammar/
+# https://docs.pulsar-edit.dev/developing-for-pulsar/creating-a-grammar-modern-tree-sitter/#the-package
 
-'scopeName': 'source.zig'
-'name': 'Zig'
-'fileTypes': [
-  'zig'
-]
-'patterns': [
-  # comments
-  {
-    'match': '///.*$'
-    'name': 'comment.block.doc.zig'
-  },
-  {
-    'match': '//!.*$'
-    'name': 'keyword.doc.zig'
-  },
-  {
-    'match': '//.*$'
-    'name': 'comment.line.zig'
-  },
-  # strings
-  {
-    'match': '\\"[^\\"]*\\"'
-    'name': 'string.literal.zig'
-  },
-  {
-    'match': '\'[^\']*\''
-    'name': 'string.character.char.literal.zig'
-  },
-  {
-    'match': '\\\\\\\\.*$'
-    'name': 'string.multiline.block.literal.zig'
-  },
-  # special
-  {
-    'match': '@\\w*(?=\\()'
-    'name': 'constant.import.zig'
-  },
-  # keywords
-  {
-    'match': '(^|(?<!\\w))(try|catch|suspend|resume|await|switch)((?!\\w)|$)'
-    'name': 'keyword.control.zig'
-  },
-  {
-    'match': '(^|(?<!\\w))(defer|errdefer|error|orelse|test|inline)((?!\\w)|$)'
-    'name': 'keyword.control.zig'
-  },
-  {
-    'match': '(^|(?<!\\w))(if|else|while|for|return|noreturn)((?!\\w)|$)'
-    'name': 'keyword.control.zig'
-  },
-  {
-    'match': '(^|(?<!\\w))(continue|break|const|var|unreachable)((?!\\w)|$)'
-    'name': 'keyword.control.zig'
-  },
-  # values
-  {
-    'match': '(^|(?<!\\w))((i|u)(([0-5]?[0-9]?[0-9]?[0-9]?[0-9])|(6[0-5][0-5][0-3][0-5])))((?!\\w)|$)'
-    'name': 'keyword.type.zig'
-  },
-  {
-    'match': '(^|(?<!\\w))(isize|usize|anytype)((?!\\w)|$)'
-    'name': 'keyword.type.zig'
-  },
-  {
-    'match': '(^|(?<!\\w))(c_char|c_short|c_ushort|cint|cuint)((?!\\w)|$)'
-    'name': 'keyword.type.zig'
-  },
-  {
-    'match': '(^|(?<!\\w))(c_long|c_ulong|c_longlong|c_ulonglong|c_longdouble)((?!\\w)|$)'
-    'name': 'keyword.type.zig'
-  },
-  {
-    'match': '(^|(?<!\\w))(f16|f32|f64|f80|f128)((?!\\w)|$)'
-    'name': 'keyword.type.zig'
-  },
-  {
-    'match': '(^|(?<!\\w))bool((?!\\w)|$)'
-    'name': 'keyword.type.zig'
-  },
-  {
-    'match': '(^|(?<!\\w))void((?!\\w)|$)'
-    'name': 'keyword.type.zig'
-  },
-  {
-    'match': '(^|(?<!\\w))(anyopaque|type|anyerror)((?!\\w)|$)'
-    'name': 'keyword.type.zig'
-  },
-  {
-    'match': '(^|(?<!\\w))(comptime_int|comptime_float)((?!\\w)|$)'
-    'name': 'keyword.type.zig'
-  },
-  # literals
-  {
-    'match': '(^|(?<!\\w))(true|false|null|undefined|struct|enum)((?!\\w)|$)'
-    'name': 'constant.literal.zig'
-  },
-  { # ints/floats
-    'match': '(^|(?<!\\w))[0-9]+\\.?[0-9a-zA-Z]*((?!\\w)|$)'
-    'name': 'constant.literal.zig'
-  },
-  { # hex
-    'match': '(^|(?<!\\w))0x[0-9]+((?!\\w)|$)'
-    'name': 'constant.literal.zig'
-  },
-  # functions
-  {
-    'match': '(^|(?<!\\w))(fn|pub)((?!\\w)|$)'
-    'name': 'entity.name.function.def.zig'
-  },
-  {
-    'match': '(^|(?<=(\\s|\\.)))(?<!@)\\w+(?=\\()'
-    'name': 'entity.name.function.call.zig'
-  },
-  # values
-  {
-    'match': '(\\w+)((?=((\\s*\\=)|(\\s*:)))|$)'
-    'name': 'variable.other.readwrite.zig'
-  },
-  {
-    'match': '(?<=(\\|\\s*))(\\w+)((?=(\\s*\\|))|$)'
-    'name': 'variable.other.readwrite.zig'
-  },
-  # operators
-  {
-    'match': '&|!'
-    'name': 'keyword.control.operator.zig'
-  },
-  {
-    'match': '(\\*|\\?)(?=\\w)'
-    'name': 'keyword.control.operator.zig'
-  }
-]
-
-'comments':
-  'start': '// '
-  'line': '//'
+name: 'Zig'
+scopeName: 'source.zig'
+type: 'modern-tree-sitter'
+parser: 'tree-sitter-zig'
+fileTypes: [ 'zig', 'zon' ]
+# firstLineRegex: "^\s*(---|<(?!html|head|body)\w+)"
+treeSitter:
+    grammar: 'tree-sitter/grammar.wasm'
+    highlightsQuery: 'tree-sitter/highlights.scm'
+    foldsQuery: 'tree-sitter/folds.scm'
+    indentsQuery: 'tree-sitter/indents.scm'
+comments:
+    start: '// '
+    line: '//'
