@@ -2,6 +2,10 @@
 
 ; Variables
 
+; namespaces
+(field_expression
+  object: (identifier) @support.other.namespace.zig)
+
 ; enum
 (enum_declaration
   (container_field
@@ -22,7 +26,6 @@
   (identifier) @variable.parameter.zig)
 
 ; Types
-
 (parameter
   type: (identifier) @support.other.storage.type.zig)
 
