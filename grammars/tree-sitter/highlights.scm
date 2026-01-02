@@ -244,7 +244,7 @@
   ".?"
   "?"
   ".."
-] @operator
+] @keyword.operator.zig
 
 ; Literals
 (character) @character.literal.constant.zig
@@ -252,7 +252,7 @@
 ([
   (string)
   (multiline_string)
-] @string.literal.constant.zig
+] @string.quoted.double.zig
   (#set! "priority" 95))
 
 (integer) @number.literal.constant.zig
