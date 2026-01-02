@@ -1,120 +1,136 @@
 ; https://github.com/tree-sitter-grammars/tree-sitter-zig/blob/master/queries/highlights.scm
 
 ; Variables
-(identifier) @variable
+
+; enum
+(enum_declaration
+  (container_field
+    name: (identifier) @variable.declaration.enum.zig))
+
+(error_set_declaration
+  (identifier) @variable.declaration.enum.zig)
+
+; general variable declarations
+(variable_declaration
+  (identifier) @variable.declaration.zig)
 
 ; Parameters
 (parameter
-  name: (identifier) @variable.parameter)
+  name: (identifier) @variable.parameter.zig)
 
 (payload
-  (identifier) @variable.parameter)
+  (identifier) @variable.parameter.zig)
 
 ; Types
-(parameter
-  type: (identifier) @type)
 
-((identifier) @type
-  (#lua-match? @type "^[A-Z_][a-zA-Z0-9_]*"))
+(parameter
+  type: (identifier) @support.other.storage.type.zig)
+
+(parameter
+  type: (pointer_type
+    (identifier) @support.other.storage.type.zig))
+
+; not really a standard in zig, but I will support this naming
+; convention anyway ([IDENT]_t as a type)
+((identifier) @support.other.storage.type.zig
+  (#match? @support.other.storage.type.zig "_t$"))
+
+; The more standard zig naming convention for types
+((identifier) @support.other.storage.type.zig
+  (#match? @support.other.storage.type.zig "^[A-Z_][a-zA-Z0-9_]*")
+  ; avoid matching constants
+  (#not-match? @support.other.storage.type.zig "^[A-Z][A-Z_0-9]+$"))
 
 (variable_declaration
-  (identifier) @type
+  (identifier) @entity.declaration.type.enum
   "="
   [
-    (struct_declaration)
-    (enum_declaration)
-    (union_declaration)
-    (opaque_declaration)
+    (struct_declaration ) @entity.name.type.struct.zig
+    (enum_declaration   ) @entity.name.type.enum.zig
+    (union_declaration  ) @entity.name.type.union.zig
+    (opaque_declaration ) @entity.name.type.opaque.zig
   ])
 
 [
   (builtin_type)
   "anyframe"
-] @type.builtin
+] @support.storage.type.builtin.zig
 
 ; Constants
-((identifier) @constant
-  (#lua-match? @constant "^[A-Z][A-Z_0-9]+$"))
+((identifier) @constant.other.zig
+  (#match? @constant.other.zig "^[A-Z][A-Z_0-9]+$")
+  (#set! capture.shy))
 
 [
   "null"
   "unreachable"
   "undefined"
-] @constant.builtin
+] @constant.language.null.zig
 
-(field_expression
-  .
-  member: (identifier) @constant)
-
-(enum_declaration
-  (container_field
-    type: (identifier) @constant))
+(boolean) @constant.language.boolean._TYPE_.zig
 
 ; Labels
 (block_label
-  (identifier) @label)
+  (identifier) @entity.name.label.zig)
 
 (break_label
-  (identifier) @label)
+  (identifier) @entity.name.label.zig)
 
 ; Fields
-(field_initializer
-  .
-  (identifier) @variable.member)
+(assignment_expression
+  (field_expression
+      member: (identifier) @variable.declaration.member.zig))
 
-(field_expression
-  (_)
-  member: (identifier) @variable.member)
+; I haven't been able to find where this gets set up
+; (field_initializer
+;   .
+;   (identifier) @variable.declaration.member.zig)
 
-(container_field
-  name: (identifier) @variable.member)
+; I don't believe this will do what we want, but leaving it here anyway
+; (field_expression
+;   (_)
+;   member: (identifier) @variable.member)
 
-(initializer_list
-  (assignment_expression
-    left: (field_expression
-      .
-      member: (identifier) @variable.member)))
+; This is handled via other methods
+; (container_field
+;   name: (identifier) @variable.member)
 
 ; Functions
-(builtin_identifier) @function.builtin
+((builtin_identifier) @keyword.control.directive.include.zig
+  (#match? @keyword.control.directive.include.zig "^@(import|cImport|cInclude)$"))
 
+((builtin_identifier) @keyword.control.directive.define.zig
+  (#match? @keyword.control.directive.define.zig "^@cDefine$"))
+
+; list copied from https://ziglang.org/documentation/master/#Builtin-Functions
+; @import was removed due to it having its own match (see above)
+; same for the @c<thing> functions
+((builtin_identifier) @keyword.control.directive.zig
+  (#match? @keyword.control.directive.zig "^@(addrSpaceCast|addWithOverflow|alignCast|alignOf|as|atomicLoad|atomicRmw|atomicStore|bitCast|bitOffsetOf|bitSizeOf|branchHint|breakpoint|mulAdd|byteSwap|bitReverse|offsetOf|call|clz|cmpxchgStrong|cmpxchgWeak|compileError|compileLog|constCast|ctz|cUndef|cVaArg|cVaCopy|cVaEnd|cVaStart|divExact|divFloor|divTrunc|embedFile|enumFromInt|errorFromInt|errorName|errorReturnTrace|errorCast|export|extern|field|fieldParentPtr|FieldType|floatCast|floatFromInt|frameAddress|hasDecl|hasField|inComptime|intCast|intFromBool|intFromEnum|intFromError|intFromFloat|intFromPtr|max|memcpy|memset|memmove|min|wasmMemorySize|wasmMemoryGrow|mod|mulWithOverflow|panic|popCount|prefetch|ptrCast|ptrFromInt|rem|returnAddress|select|setEvalBranchQuota|setFloatMode|setRuntimeSafety|shlExact|shlWithOverflow|shrExact|shuffle|sizeOf|splat|reduce|src|sqrt|sin|cos|tan|exp|exp2|log|log2|log10|abs|floor|ceil|trunc|round|subWithOverflow|tagName|This|trap|truncate|EnumLiteral|Int|Tuple|Pointer|Fn|Union|Struct|Enum|typeInfo|typeName|TypeOf|unionInit|Vector|volatileCast|workGroupId|workGroupSize|workItemId)$"))
+
+; The "foo" in `foo();`.
 (call_expression
-  function: (identifier) @function.call)
+  function: (identifier) @support.other.function.zig)
 
+; The "foo" in `thing->troz->foo(...)`.
 (call_expression
   function: (field_expression
-    member: (identifier) @function.call))
+    member: (identifier) @support.other.function.zig))
 
 (function_declaration
-  name: (identifier) @function)
-
-; Modules
-(variable_declaration
-  (identifier) @module
-  (builtin_function
-    (builtin_identifier) @keyword.import
-    (#any-of? @keyword.import "@import" "@cImport")))
-
-(variable_declaration
-  (identifier) @module
-  (field_expression
-    object: (builtin_function
-        (builtin_identifier) @keyword.import
-        (#any-of? @keyword.import "@import" "@cImport"))))
+  name: (identifier) @entity.name.function.zig)
 
 ; Builtins
-[
-  "c"
-  "..."
-] @variable.builtin
+"c" @support.variable.builtin.zig
 
-((identifier) @variable.builtin
-  (#eq? @variable.builtin "_"))
+"..." @keyword.operator.ellipsis.zig
 
-(calling_convention
-  (identifier) @variable.builtin)
+((identifier) @support.variable.builtin.zig
+  (#eq? @support.variable.builtin.zig "_"))
 
 ; Keywords
+(calling_convention) @keyword.control.directive.zig
+
 [
   "asm"
   "defer"
@@ -123,14 +139,14 @@
   "error"
   "const"
   "var"
-] @keyword
+] @keyword.control._TYPE_.zig
 
 [
   "struct"
   "union"
   "enum"
   "opaque"
-] @keyword.type
+] @keyword._TYPE_.storage.type.zig
 
 [
   "async"
@@ -138,42 +154,33 @@
   "suspend"
   "nosuspend"
   "resume"
-] @keyword.coroutine
+] @keyword.control._TYPE_.zig
 
-"fn" @keyword.function
+"fn" @keyword.function.zig
 
 [
   "and"
   "or"
   "orelse"
-] @keyword.operator
-
-"return" @keyword.return
+  "||"
+] @keyword.operator.logical._TYPE_.zig
 
 [
+  "return"
   "if"
   "else"
   "switch"
-] @keyword.conditional
-
-[
   "for"
   "while"
   "break"
   "continue"
-] @keyword.repeat
-
-[
   "usingnamespace"
-  "export"
-] @keyword.import
-
-[
   "try"
   "catch"
-] @keyword.exception
+] @keyword.control._TYPE_.zig
 
 [
+  "export"
   "volatile"
   "allowzero"
   "noalias"
@@ -188,11 +195,12 @@
   "comptime"
   "packed"
   "threadlocal"
-] @keyword.modifier
+] @storage.modifier._TYPE_.zig
 
 ; Operator
+"=" @keyword.operator.assignment.zig
+
 [
-  "="
   "*="
   "*%="
   "*|="
@@ -210,40 +218,54 @@
   "&="
   "^="
   "|="
-  "!"
-  "~"
-  "-"
-  "-%"
-  "&"
+] @keyword.operator.assignment.compound.zig
+
+[
   "=="
   "!="
   ">"
+  "<"
   ">="
   "<="
-  "<"
+] @keyword.operator.comparison.zig
+
+[
+  "~"
   "&"
   "^"
   "|"
   "<<"
   ">>"
   "<<|"
-  "+"
-  "++"
-  "+%"
+  ; "|>>"
+] @keyword.operator.bitwise.zig
+
+"++" @keyword.operator.increment.zig
+; "--" @keyword.operator.decrement.zig
+
+[
+  "-"
   "-%"
-  "+|"
   "-|"
+  "+"
+  "+%"
+  "+|"
   "*"
-  "/"
-  "%"
-  "**"
   "*%"
   "*|"
-  "||"
+  "**"
+  "/"
+  "%"
+] @keyword.operator.arithmetic.zig
+
+; (unary_expression ["+" "-" "!"] @keyword.operator.unary.zig)
+
+[
   ".*"
   ".?"
   "?"
   ".."
+  "!"
 ] @keyword.operator.zig
 
 ; Literals
@@ -264,29 +286,28 @@
 (escape_sequence) @constant.character.escape.zig
 
 ; Punctuation
-[
-  "["
-  "]"
-  "("
-  ")"
-  "{"
-  "}"
-] @punctuation.bracket
+";" @punctuation.terminator.statement.zig
+
+"{" @punctuation.definition.block.begin.bracket.curly.zig
+"}" @punctuation.definition.block.end.bracket.curly.zig
+"(" @punctuation.definition.begin.bracket.round.zig
+")" @punctuation.definition.end.bracket.round.zig
+"[" @punctuation.definition.array.begin.bracket.square.zig
+"]" @punctuation.definition.array.end.bracket.square.zig
 
 [
-  ";"
   "."
   ","
   ":"
   "=>"
   "->"
-] @punctuation.delimiter
+] @punctuation.separator._TYPE_.zig
 
 (payload
-  "|" @punctuation.bracket)
+  "|" @punctuation.seperator.zig)
 
 ; Comments
-(comment) @comment @spell
+(comment) @comment.zig
 
-((comment) @comment.documentation
-  (#lua-match? @comment.documentation "^//!"))
+((comment) @comment.documentation.zig
+  (#match? @comment.documentation.zig "^(//!|///)"))
