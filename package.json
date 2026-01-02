@@ -1,6 +1,6 @@
 {
   "name": "language-zig",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modern-Tree-Sitter language support for Zig.  A continuation of https://github.com/GrayJack/language-zig",
   "keywords": [
     "language",
